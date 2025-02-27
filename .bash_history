@@ -363,3 +363,7 @@ ls
 nano app.py
 cd ..
 ls
+git add .
+git commit -m "adding auth"
+git push origin main
+git pull --rebase origin main
