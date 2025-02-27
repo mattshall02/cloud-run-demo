@@ -37,10 +37,8 @@ def get_db_conn():
 
 @app.route("/login")
 def login():
-    """
-    Redirects user to Google OAuth page.
-    """
-    redirect_uri = url_for('auth_callback', _external=True)
+    # Force https scheme
+    redirect_uri = url_for('auth_callback', _external=True, _scheme='https')
     return oauth.google.authorize_redirect(redirect_uri)
 
 @app.route("/callback")
