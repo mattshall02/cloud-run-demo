@@ -1,5 +1,0 @@
-Flask
-google-cloud-storage
-psycopg2-binary
-pg8000
-cloud-sql-python-connector

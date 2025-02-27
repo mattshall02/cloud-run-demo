@@ -309,3 +309,23 @@ mv cloud-run-app/Dockerfile ./
 mv cloud-run-app/cloudbuild.yaml ./
 ls
 git commit -m "Moving Dockerfile and cloudbuild.yaml"
+git add .
+git commit -m "Moving Dockerfile and cloudbuild.yaml"
+git push origin main
+ls
+nano cloudbuild.yaml
+git add cloudbuild.yaml
+git commit -m "Changes to cloudbuild.yaml"
+git push origin main
+ls
+mv cloud-run-app/requirements.txt ./
+ls
+git add requirements.txt
+git commit "Moved requirements.txt"
+git commit -m "Moved requirements.txt"
+git push origin main
+ls
+nano Dockerfile
+nano cloudbuild.yaml
+mv cloud-run-app/app.py ./
+git add app.py
