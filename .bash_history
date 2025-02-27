@@ -329,3 +329,8 @@ nano Dockerfile
 nano cloudbuild.yaml
 mv cloud-run-app/app.py ./
 git add app.py
+git add .
+git commit -m "Moved app.py"
+git push origin main
+mv app.py cloud-run-app/
+ls
