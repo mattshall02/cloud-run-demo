@@ -9,7 +9,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the application code
-COPY cloud-run-demo/app.py .
+COPY cloud-run-app/app.py .
 
 # Expose the port (Cloud Run uses 8080 by default)
 EXPOSE 8080
