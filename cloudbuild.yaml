@@ -33,3 +33,6 @@ steps:
 # Optionally, specify images for build output references
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/my-repo/cloud-run-app'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
