@@ -350,3 +350,16 @@ nano app.py
 ls
 cd ..
 ls
+git add .
+git commit -m "adding auth"
+git push origin main
+git pull
+git config pull.rebase true
+ls
+ls cloud-run-app
+ls
+cd cloud-run-app
+ls
+nano app.py
+cd ..
+ls
