@@ -334,3 +334,19 @@ git commit -m "Moved app.py"
 git push origin main
 mv app.py cloud-run-app/
 ls
+git add .
+git commit -m "Moved app.py"
+git push origin main
+ls
+nano cloudbuild.yaml
+gcloud sql connect image-db --user=myuser --database=images
+[200~gcloud run services update cloud-run-app   --region us-central1   --update-env-vars   GOOGLE_CLIENT_ID=1057538121289-raa34pa805k8dbc9qel2q9v2gqm176oi.apps.googleusercontent.com,GOOGLE_CLIENT_SECRET=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,SECRET_KEY=holden1013
+gcloud run services update cloud-run-app   --region us-central1   --update-env-vars   GOOGLE_CLIENT_ID=1057538121289-raa34pa805k8dbc9qel2q9v2gqm176oi.apps.googleusercontent.com,GOOGLE_CLIENT_SECRET=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,SECRET_KEY=holden1013
+ls
+nano requirements.txt
+cd cloud-run-app
+ls
+nano app.py
+ls
+cd ..
+ls
