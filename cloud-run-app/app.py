@@ -120,3 +120,7 @@ def random_image():
             return "No images found."
     except Exception as e:
         return f"Error retrieving image: {e}", 500
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+
