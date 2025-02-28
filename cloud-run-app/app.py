@@ -40,16 +40,11 @@ def login():
 
 @app.route("/callback")
 def auth_callback():
-    """
-    Google OAuth callback. 
-    """
-    token = oauth.google.authorize_access_token()  # Exchange code for token
-    user_info = oauth.google.get('userinfo').json()  # Grab user profile info
-    # e.g. user_info = {"email": "...", "picture": "...", ...}
-
-    # Store user_info in the session
+    token = oauth.google.authorize_access_token()
+    user_info = oauth.google.userinfo()
     session['user'] = user_info
     return redirect(url_for('index'))
+
 
 @app.route("/logout")
 def logout():
@@ -110,9 +105,18 @@ def upload_photo():
 
 @app.route("/image")
 def random_image():
-    # same logic as before, but you can now also retrieve 'uploader_email' if you want
-    # ...
-    pass
+    try:
+        conn = get_db_conn()
+        cursor = conn.cursor()
+        cursor.execute("SELECT url FROM images ORDER BY RANDOM() LIMIT 1;")
+        record = cursor.fetchone()
+        cursor.close()
+        conn.close()
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+        if record:
+            image_url = record[0]
+            return f'<img src="{image_url}" style="max-width:80%; height:auto;">'
+        else:
+            return "No images found."
+    except Exception as e:
+        return f"Error retrieving image: {e}", 500
