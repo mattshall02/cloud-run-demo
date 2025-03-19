@@ -18,18 +18,26 @@ oauth.register(
     }
 )
 
-DB_HOST = os.getenv("DB_HOST", "127.0.0.1")
+
 DB_USER = os.getenv("DB_USER", "myuser")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "password")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "mypassword")
 DB_NAME = os.getenv("DB_NAME", "images")
+DB_INSTANCE_CONNECTION_NAME = os.getenv("DB_INSTANCE_CONNECTION_NAME", "image-db:us-central1:image-db")  # Update with your actual connection name
+
+connector = Connector()
 
 def get_db_conn():
-    return psycopg2.connect(
-        dbname=DB_NAME,
-        user=DB_USER,
-        password=DB_PASSWORD,
-        host=DB_HOST
-    )
+    try:
+        return connector.connect(
+            DB_INSTANCE_CONNECTION_NAME,
+            "pg8000",
+            user=DB_USER,
+            password=DB_PASSWORD,
+            db=DB_NAME
+        )
+    except Exception as e:
+        print(f"Database connection error: {e}")
+        raise
 
 @app.route("/login")
 def login():
