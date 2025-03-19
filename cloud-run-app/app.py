@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 import os
 import pg8000
 from google.cloud.sql.connector import Connector
@@ -26,7 +29,7 @@ oauth.register(
 
 # Database credentials
 DB_USER = os.getenv("DB_USER", "myuser")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "mypassword")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "password")
 DB_NAME = os.getenv("DB_NAME", "images")
 DB_INSTANCE_CONNECTION_NAME = os.getenv("DB_INSTANCE_CONNECTION_NAME", "cloud-run-demo-452116:us-central1:image-db")
 
