@@ -11,6 +11,8 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:qa
+|2,0,1742391729,,"qa"
 :wq
 |2,0,1740667531,,"wq"
 
@@ -25,20 +27,36 @@
 # Registers:
 
 # File marks:
-'0  1  0  ~/cloud-run-app/cloudbuild.yaml
-|4,48,1,0,1740667531,"~/cloud-run-app/cloudbuild.yaml"
-'1  1  0  ~/cloud-run-app/cloud-function/main.py
-|4,49,1,0,1740597363,"~/cloud-run-app/cloud-function/main.py"
+'0  24  40  ~/cloud-run-demo/cloud-run-app/app.py
+|4,48,24,40,1742391729,"~/cloud-run-demo/cloud-run-app/app.py"
+'1  1  0  ~/cloud-run-app/cloudbuild.yaml
+|4,49,1,0,1740667531,"~/cloud-run-app/cloudbuild.yaml"
+'2  1  0  ~/cloud-run-app/cloud-function/main.py
+|4,50,1,0,1740597363,"~/cloud-run-app/cloud-function/main.py"
 
 # Jumplist (newest first):
+-'  24  40  ~/cloud-run-demo/cloud-run-app/app.py
+|4,39,24,40,1742391729,"~/cloud-run-demo/cloud-run-app/app.py"
+-'  1  0  ~/cloud-run-demo/cloud-run-app/app.py
+|4,39,1,0,1742391599,"~/cloud-run-demo/cloud-run-app/app.py"
+-'  1  0  ~/cloud-run-app/cloudbuild.yaml
+|4,39,1,0,1740667531,"~/cloud-run-app/cloudbuild.yaml"
 -'  1  0  ~/cloud-run-app/cloudbuild.yaml
 |4,39,1,0,1740667531,"~/cloud-run-app/cloudbuild.yaml"
 -'  1  0  ~/cloud-run-app/cloud-function/main.py
 |4,39,1,0,1740597363,"~/cloud-run-app/cloud-function/main.py"
 -'  1  0  ~/cloud-run-app/cloud-function/main.py
 |4,39,1,0,1740597363,"~/cloud-run-app/cloud-function/main.py"
+-'  1  0  ~/cloud-run-app/cloud-function/main.py
+|4,39,1,0,1740597363,"~/cloud-run-app/cloud-function/main.py"
+-'  1  0  ~/cloud-run-app/cloud-function/main.py
+|4,39,1,0,1740597363,"~/cloud-run-app/cloud-function/main.py"
 
 # History of marks within files (newest to oldest):
+
+> ~/cloud-run-demo/cloud-run-app/app.py
+	*	1742391723	0
+	"	24	40
 
 > ~/cloud-run-app/cloudbuild.yaml
 	*	1740667521	0
