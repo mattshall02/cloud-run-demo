@@ -1,9 +1,17 @@
 import os
 import psycopg2
 from google.cloud.sql.connector import Connector
+<<<<<<< HEAD
 from flask import Flask, redirect, url_for, session, request
 from authlib.integrations.flask_client import OAuth
 from google.cloud import storage  # if you're using GCS for uploads
+=======
+import pg8000
+from flask import Flask, redirect, url_for, session, request
+from authlib.integrations.flask_client import OAuth
+from google.cloud import storage
+
+>>>>>>> c5faf8f (Switch to Cloud SQL Connector for DB connection)
 
 
 
@@ -19,6 +27,7 @@ oauth.register(
     name='google',
     client_id=os.getenv("GOOGLE_CLIENT_ID"),
     client_secret=os.getenv("GOOGLE_CLIENT_SECRET"),
+<<<<<<< HEAD
     server_metadata_url="https://accounts.google.com/.well-known/openid-configuration",
     client_kwargs={
         "scope": "openid email profile"
@@ -30,6 +39,19 @@ DB_USER = os.getenv("DB_USER", "myuser")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "mypassword")
 DB_NAME = os.getenv("DB_NAME", "images")
 DB_INSTANCE_CONNECTION_NAME = os.getenv("DB_INSTANCE_CONNECTION_NAME", "image-db:us-central1:image-db")  # Update with your actual connection name
+=======
+    access_token_url='https://accounts.google.com/o/oauth2/token',
+    access_token_params=None,
+    authorize_url='https://accounts.google.com/o/oauth2/auth',
+    authorize_params={)
+
+# Database credentials
+DB_USER = os.getenv("DB_USER", "myuser")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "mypassword")
+DB_NAME = os.getenv("DB_NAME", "images")
+# Use the Cloud SQL instance connection name (not a public IP)
+DB_INSTANCE_CONNECTION_NAME = os.getenv("DB_INSTANCE_CONNECTION_NAME", "cloud-run-demo-452116:us-central1:image-db")
+>>>>>>> c5faf8f (Switch to Cloud SQL Connector for DB connection)
 
 connector = Connector()
 
